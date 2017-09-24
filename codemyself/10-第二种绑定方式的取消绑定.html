@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div>box</div>
+	<script>
+		var oBox = document.getElementsByTagName('div')[0];
+			//没有兼容
+			oBox.addEventListener('click',obox.oBox1,false);
+			//取消绑定事件
+			//
+			var oBox.oBox1 =function(){
+				this.style.backgroundColor = 'pink';
+			}
+			oBox.removeEventListener('click',oBox.oBox1,false);
+//      function fn(){
+//	
+//				this.style.backgroundColor = 'pink';
+//       }
+//				oBox.addEventListener('click',fn,false);
+//			//取消绑定事件
+//			oBox.removeEventListener('click',fn,false);
+//			
+	</script>
+			
+		
+	</body>
+</html>

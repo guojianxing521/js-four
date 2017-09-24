@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height:100px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>   <span>我是span</span>DFFGD </li>
+			<li>DFSDF </li>
+			<li>分第三方</li>
+			<li>vfcgdfgdfss</li>
+			<li>结婚吧非常常见的实时发布</li>
+			<li>对付恐惧和你的手机壳</li>
+		</ul>
+		<div>
+			我是一个盒子
+		</div>
+		<script>
+			
+//		<!--1.父元素.appendChild(需要添加的子节点) 往里面的最后追加进去  
+//		2.父元素.insertBefore(你需要添加的元素,原有的元素)
+//		3.父元素.removeChild（需要移除的子节点） 
+//		4.父元素.replaceChild(新的元素，你需要替换的元素)-->
+//      5.追加、添加、替换子节点，都需要创建新的元素，才能操作,或者添加已经存在的元素
+//      6.用现有元素进行操作，现有元素的位置不再出现
+        var aUl = document.getElementsByTagName('ul')[0];
+        var aLi = document.getElementsByTagName('li')
+       var aDiv = document.getElementsByTagName('div')[0];
+        
+        //追加子节点
+//      var li = document.createElement('li');
+//      li.innerHTML ='哈哈哈';
+//      aUl.appendChild(li);
+     aLi[0].appendChild(aDiv);
+      
+        
+        //插入子节点
+  
+//      var oDiv = document.createElement('div');
+//      oDiv.innerHTML ='我好好';
+//      aUl.insertBefore(oDiv,aLi[0]);
+// aLi[0].insertBefore(aDiv,aLi[0].firstElementChild);
+   
+       //移除子节点
+//     aUl.removeChild(aLi[3]);
+       //替换子节点
+//     var aSpan = document.createElement('span');
+//     aSpan.innerHTML = '啦啦啦啦';
+//     aUl.replaceChild(aSpan,aLi[3]);
+// var aDiv = document.getElementsByTagName('div')[0];
+// var aSpan = document.getElementsByTagName('span')[0];
+// aLi[0].replaceChild(aDiv,aSpan);
+// aLi[0].replaceChild(aDiv,aLi[0].firstChild);
+// aLi[0].replaceChild(aDiv,aLi[0].firstElementChild);
+   
+		</script>
+	</body>
+</html>

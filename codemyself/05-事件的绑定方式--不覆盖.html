@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		div{
+			width:100px;
+			height: 100px;
+			background-color: blue;
+		}
+	</style>
+	<body>
+		<div>box</div>
+		<script src='mytools.js'></script>
+		<script>
+			var aDiv =document.getElementsByTagName('div')[0];
+//			aDiv.onclick = function (){
+//				aDiv.style.backgroundColor='red';
+//			}
+//			aDiv.onclick = function() {
+//				
+//			aDiv.style.color= 'blue';
+//			}//后面会把前面的点击事件覆盖
+     //不覆盖的方法，标准浏览器下
+//   aDiv.addEventListener('click',function(){
+//   	aDiv.style.backgroundColor = 'red';
+//   },false);
+//    aDiv.addEventListener('click',function(){
+//   	aDiv.style.width = '200px';
+//   },false);
+   //IE内核支持
+   function fn(){
+   	aDiv.style.backgroundColor = 'yellow';
+   }
+// aDiv.attachEvent('onclick',fn);
+
+//为了兼容所有浏览器
+   bang(aDiv,'click',fn);
+		</script>
+	</body>
+</html>

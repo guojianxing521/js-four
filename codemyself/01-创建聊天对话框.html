@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			table{
+				width:200px;
+				height:60px;
+				border:1px solid #000;
+				
+			}
+		</style>
+	</head>
+	<body>
+		姓名：<input type="text" /><br />
+		年龄：<input type="text" />
+		<input type="button" value="添加学生"/>
+		<input type="button" value="删除学生"/>
+		
+		<table>
+			<tbody id='tbody'>
+			<tr>
+				<td>郭儿</td>
+				<td>hello</td>
+			</tr>
+			<tr>
+				<td>郭儿</td>
+				<td>hello</td>
+			</tr>
+			<tr>
+				<td>郭儿</td>
+				<td>hello</td>
+			</tr>
+			<tr>
+				<td>郭儿</td>
+				<td>hello</td>
+			</tr>
+			
+			</tbody>
+			
+		</table>
+		<script src="mytools.js"></script>
+		<script>
+			var aIpt=document.getElementsByTagName('input');
+			var oTbody = document.getElementById('tbody');
+			
+			//隔行变色
+			function bs(obj){
+				for(var i=0;i<obj.children.length;i++){
+					if(i%2==0){
+						obj.children[i].style.backgroundColor = 'red';
+					}else{
+						obj.children[i].style.backgroundColor = 'yellow';
+					}
+				}
+			}
+			bs(oTbody);
+			//
+			aIpt[2].onclick = function (){
+				var username=document.createElement('td');
+				username.innerHTML = aIpt[0].value;
+				
+				var age=document.createElement('td');
+				age.innerHTML = aIpt[1].value;
+				
+				var otr = document.createElement('tr');
+				
+				otr.appendChild(username);
+				otr.appendChild(age);
+				oTbody.appendChild(otr);
+				bs(oTbody);
+				
+			}
+				aIpt[3].onclick = function (){
+					if(first(oTbody)!=last(oTbody)){
+						oTbody.removeChild(last(oTbody));
+					}
+					
+				}
+				
+		</script>
+	</body>
+</html>

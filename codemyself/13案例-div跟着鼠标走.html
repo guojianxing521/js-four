@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				position: relative;
+				border-radius: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script>
+			var aDiv = document.getElementsByTagName('div')[0];
+			aDiv.onmousemove= function(ev){
+				//兼容性处理
+				ev = ev||event;
+				//鼠标移动，盒子中心跟着鼠标走
+				this.style.left = ev.clientX-50+'px';
+				this.style.top = ev.clientY-50+'px';
+			}
+		</script>
+	</body>
+</html>

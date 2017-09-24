@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>box</div>
+		<script src="mytools.js"></script>
+		<script type="text/javascript">
+			var oBox = document.getElementsByTagName('div')[0];
+			oBox.onclick = function(ev){
+				//IE和谷歌支持event
+				//标准浏览器，是第一个参数传进来的
+				var ev =  ev||event 
+				console.log(ev);
+			}
+		</script>
+	</body>
+</html>

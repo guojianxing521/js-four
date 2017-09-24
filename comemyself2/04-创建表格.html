@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			table{
+				width: 200px;
+				border: 1px solid #000;
+				
+			}
+		</style>
+	</head>
+	<body>
+		姓名：<input type="text" /><br>
+		年龄：<input type="text" />
+		<input type="button" value="添加学生"/>
+		<input type="button" value="删除学生"/>
+		<table>
+			
+					
+			<tbody id="tbody">
+				<tr>
+				    <td>姓名</td>
+					<td>年龄</td>
+				</tr>
+				<tr>
+					<td>你好 dxcf </td>
+					<td>我好</td>
+				</tr>
+				<tr>
+					<td>你</td>
+					<td>我很好</td>
+				</tr>
+				<tr>
+					<td>你好</td>
+					<td>我</td>
+				</tr>
+				<tr>
+					<td>你好</td>
+					<td>我好</td>
+				</tr>
+			</tbody>
+		</table>
+		<script>
+			var aIpt = document.getElementsByTagName('input');
+			var oTbody = document.getElementById('tbody');
+			bianse();
+			aIpt[2].onclick = function(){
+				
+//				var str ='<th><tr>'+aIpt[0].value+'</tr><tr>'+aIpt[1].value+'</tr></th>';
+				 var td1 = document.createElement('td');
+				 td1.innerHTML =aIpt[0].value;
+				 var td2 = document.createElement('td');
+				 td2.innerHTML = aIpt[1].value;
+				 var tr = document.createElement('tr');
+				 tr.appendChild(td1);
+				 tr.appendChild(td2);
+				 oTbody.appendChild(tr);
+				 bianse();
+			}
+			
+			//注意兼容处理
+			aIpt[3].onclick = function(){
+				if(oTbody.firstElementChild!=oTbody.lastElementChild){
+					oTbody.removeChild(oTbody.lastElementChild);
+				}
+			}
+		  function bianse(){
+		  	
+		   for(var i=0;i<oTbody.children.length;i++){
+		   	if(i%2==0){
+		   		oTbody.children[i].style.backgroundColor ='red';
+		   	}else{
+		   		oTbody.children[i].style.backgroundColor ='blue';
+		   	}
+		   }
+		  }
+		</script>
+	</body>
+</html>
